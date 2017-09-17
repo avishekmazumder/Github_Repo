@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:cmn="ironhand:urn:CommonTypes"
+                      targetNamespace="ironhand:urn:OrderTypes"
+                      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                      elementFormDefault="qualified">
+        <xs:import schemaLocation="CommonTypes.xsd"
+                            namespace="ironhand:urn:CommonTypes" />
+        <xs:complexType name="OrderType">
+                <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="Item">
+                                <xs:complexType>
+                                        <xs:sequence>
+                                                <xs:element name="ProductName" type="xs:string" />
+                                                <xs:element name="Quantity" type="xs:int" />
+                                                <xs:element name="UnitPrice" type="cmn:PriceType" />
+                                        </xs:sequence>
+                                </xs:complexType>
+                        </xs:element>
+                </xs:sequence>
+        </xs:complexType>
+</xs:schema>
